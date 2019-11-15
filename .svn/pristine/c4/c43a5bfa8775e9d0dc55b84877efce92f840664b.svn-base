@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="mycanvas">
+    canvas view
+  </view>
+
+    <view class="toolsbar">
+    tools bar view
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view>
+    <canvas canvas-id="myCanvas" class="myCanvas"
+    style="width:{{screenWidth}}px; height:{{screenHeight}}px;"
+    bindtouchstart="touchStart"
+    bindtouchmove="touchMove"
+    >
+    
+    </canvas>
+  </view>
+
+    <view class="toolsbar">
+    tools bar view
+    </view>
+
+</view>

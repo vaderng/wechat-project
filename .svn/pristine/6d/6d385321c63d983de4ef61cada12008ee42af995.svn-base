@@ -1,0 +1,13 @@
+
+.mycanvas{
+  width: 100%;
+  height: 200rpx;
+  background-color: blue;
+}
+
+.toolsbar{
+  width: 100%;
+  height: 200rpx;
+  background-color: yellow;
+}
+

@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class='moment-root'>
+  
+  <canvas canvas-id='myCanvas' class='canvas' style='height: {{ canvasHeight }}px'></canvas>
+  <button class='btn-save-local' bindtap='touchStart'>上传照片</button>
+  <!-- <button class='btn-save-local' bindtap='saveCanvasImage'>生成海报</button> -->
+  <button class='btn-save-local' bindtap='saveImageTap'>保存到手机</button>
+
+   <view class="share-model" wx:if="{{ realShow }}">
+    <view class="mask" bindtap="hideDialog"></view>
+    <view class="share-conetent">
+      <image class='share-image' style='width:{{ imageWidth }}px;height:{{ imageHeight }}px' src='{{ targetSharePath }}'></image>
+      <!-- <button class='btn-save-local' bindtap='saveImageTap'>保存到手机</button> -->
+      <button class='btn-save-local' bindtap='saveImageTap'>保存到手机</button>
+    </view>
+    <view class='close-wrppper' bindtap='closeModel'>
+    <image class='close-image' src='../../image/close.png'></image>
+    </view>
+  </view> 
+</view>

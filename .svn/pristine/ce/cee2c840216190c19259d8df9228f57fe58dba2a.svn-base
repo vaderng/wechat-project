@@ -1,0 +1,31 @@
+//index.js
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+
+  },
+
+  //事件处理函数
+  onLoad: function () {
+    let that = this
+    wx.getSystemInfo({
+      success: function(res) {
+        let canvasWidth = (res.screenWidth - 10) * 2
+        let canvasHeight = (res.screenHeight - 200) * 2
+
+        that.setData({
+          canvasWidth: canvasWidth,
+          canvasHeight: canvasHeight,
+          screenWidth: canvasWidth/2,
+          screenHeight: canvasHeight/2
+        })
+        
+        that.myCanvas = wx.createCanvasContext("myCanvas")
+        that.myCanvas.drawImage("../../images/bg.png", 0, 0, 500, 450, 0, 0, canvasWidth, canvasHeight)
+        // that.myCanvas.draw()
+      },
+    })
+  }
+})
