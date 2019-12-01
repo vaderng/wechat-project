@@ -144,10 +144,11 @@ Page({
   
             console.log('画图完毕')
             //绘制到 canvas 上
-            that.canvasContext.draw(false, function () {
-              console.log('callback--------------->');
-              that.saveCanvasImage();
-            });
+            that.canvasContext.draw()
+            // that.canvasContext.draw(false, function () {
+            //   console.log('callback--------------->');
+            //   that.saveCanvasImage();
+            // });
           },
           
         })        
@@ -169,13 +170,18 @@ Page({
     var imagewidth = windowWidth * 0.9
     var imageHeight = imagewidth * imgheight/imgwidth
     // var imagewidth = imageHeight * imgwidth / imgheight
-    
+    var bg3 = '../../images/bg3.png'
+    that.canvasContext.drawImage(bg3, 0, 0, windowWidth, logoposy)
     that.canvasContext.drawImage(imgpath, windowWidth/2 - imagewidth / 2, tmpY - imageHeight/2, imagewidth, imageHeight)
     var bg = '../../images/bg4.png'
     that.canvasContext.drawImage(bg, 0, 0, windowWidth, logoposy)
     var QRPath = '../../images/bg.png';
     that.canvasContext.drawImage(QRPath, 0, logoposy, windowWidth, logoheight);
     that.canvasContext.draw()
+    // that.canvasContext.draw(false, function () {
+    //   console.log('callback--------------->');
+    //   that.saveCanvasImage();
+    // });
     // that.canvasContext.draw(false, function () {
     //   // console.log('callback--------------->');
 
@@ -216,6 +222,7 @@ Page({
           targetSharePath: res.tempFilePath,
           // realShow: true
         })
+        that.requestAlbumScope();
       },
       complete: function () {
         that.hideLoading();
